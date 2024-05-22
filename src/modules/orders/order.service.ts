@@ -1,8 +1,13 @@
+import { TOrder } from './order.interface';
 import { Order } from './order.model';
 
-const createOrderIntoDB = async (orderData: string) => {
-  const newOrder = new Order(orderData);
-  return await newOrder.save();
+const createOrderIntoDB = async (payload: TOrder) => {
+  const result = await Order.create(payload);
+  return result;
+};
+
+const getAllOrdersFromDB = async () => {
+  return;
 };
 
 export const OrderServices = {
